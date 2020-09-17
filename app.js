@@ -10,6 +10,86 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+inquirer
+  .prompt([
+    {
+      type: "input",
+      message: "what is the title of the project?",
+      name: "title",
+    },
+    {
+      type: "input",
+      message: "what is your manager's name?",
+      name: "managerName",
+    },
+    {
+      type: "input",
+      message: "what is your manager's id?",
+      name: "managerId",
+    },
+    {
+      type: "input",
+      message: "what is your manager's email?",
+      name: "managerEmail",
+    },
+    {
+      type: "number",
+      message: "what is your manager's office number?",
+      name: "managerNumber",
+    },
+    {
+      type: "list",
+      message: "which type of team member would you like to add?",
+      name: "teamMember",
+      choices: [
+        "engineer",
+        "intern",
+        "I don't want to add any more team members",
+      ],
+    },
+    {
+      type: "input",
+      message: "what is your Engineer's name?",
+      name: "engineer'sName",
+    },
+    {
+      type: "input",
+      message: "what is your Engineer's id?",
+      name: "engineer'sId",
+    },
+    {
+      type: "input",
+      message: "what is your Engineer's email?",
+      name: "engineer'sEmail",
+    },
+    {
+      type: "input",
+      message: "what is your Engineer's github username?",
+      name: "engineer'sGithubUsername",
+    },
+    {
+      type: "input",
+      message: "what is your Intern's name?",
+      name: "intern'sName",
+    },
+    {
+      type: "input",
+      message: "what is your Intern's id?",
+      name: "intern'sId",
+    },
+    {
+      type: "input",
+      message: "what is your Intern's email?",
+      name: "intern'sEmail",
+    },
+    {
+      type: "input",
+      message: "what is your Engineer's school?",
+      name: "intern'sSchoolName",
+    },
+  ])
+  .then((response) => console.log(response))
+  .catch((err) => console.log(err));
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
